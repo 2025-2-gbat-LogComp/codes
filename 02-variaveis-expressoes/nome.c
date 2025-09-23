@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    char *nome = "Seu nome";
+    char *nome = "eu mesmo";
 
     printf ("Ola ...");
     printf (nome);
