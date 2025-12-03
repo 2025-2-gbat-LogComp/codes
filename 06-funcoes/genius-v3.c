@@ -3,13 +3,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int main() {
-	int aleatorios[10];   // Array com cinco elementos aleatórios
-	int i;				 // Variável de uso em for
-	int num;		     // Variável simples que lê o número digitado pelo usuário
-	int acertos;		 // Variável simples que conta quantos numeros usuario acertou
-	int nivel;
-	
+int aleatorios[10];   // Array com cinco elementos aleatórios
+
+int gera_numeros() {
 	srand(time(NULL)); // A geração de números aleatórios exige esse comando.
 	
 	// Geracao de 10 números aleatórios
@@ -17,7 +13,15 @@ int main() {
 		aleatorios[i] = rand() % 4;		 // Gera um número aleatório entre 0 e 3
 										 // Guarda em um dos elementos de aleatorios
 	}
+}
 
+int main() {
+	int i;				 // Variável de uso em for
+	int num;		     // Variável simples que lê o número digitado pelo usuário
+	int acertos;		 // Variável simples que conta quantos numeros usuario acertou
+	int nivel;
+
+	gera_numeros();	
 	// Interacao com o usuário em até 10 niveis
 	for (nivel = 1; nivel <= 10; nivel++) {
 		printf ("Voce esta no nivel %d\n", nivel);
